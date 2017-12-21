@@ -13,8 +13,10 @@ public interface UserDao {
 
     User findUserByName(String name);
 
-    User getUserByName(String name);
+    User getUserById(String id);
 
     List<User> findAllUser();
+
+    void addUser(User user);
 
 }

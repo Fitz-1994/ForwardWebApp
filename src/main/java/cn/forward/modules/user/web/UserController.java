@@ -3,6 +3,7 @@ package cn.forward.modules.user.web;
 import cn.forward.modules.user.dao.UserDao;
 import cn.forward.modules.user.entity.User;
 import cn.forward.modules.user.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +38,7 @@ public class UserController {
      * */
     @RequestMapping(value = "/UserForm")
     public String form(User user,Model model){
+
         return "/user/userAddForm";
     }
     /**
@@ -54,5 +56,16 @@ public class UserController {
         User user = new User();
         model.addAttribute("user", user);
         return "index";
+    }
+
+    @RequestMapping(value = "/login")
+    public String login(User user,Model model) {
+        Boolean loginStatus = false;
+        //如果账号密码都不为空，就做登录验证。
+        if (StringUtils.isNotEmpty(user.getAccount()) && StringUtils.isNotEmpty(user.getPassword())) {
+            loginStatus = userService.loginValidate(user.getAccount(),user.getPassword());
+        }
+        model.addAttribute("loginStatus",loginStatus);
+        return "user/loginIndex";
     }
 }

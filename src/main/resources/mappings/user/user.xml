@@ -27,6 +27,12 @@
          from user a
         where id=#{id}
     </select>
+    <select id="getUserByAccount" resultType="User">
+        SELECT
+        <include refid="userColumns"/>
+        from user a
+        where account=#{account}
+    </select>
 
     <select id="findAllUser" resultType="User">
         select

@@ -13,17 +13,17 @@
     <title>Title</title>
 </head>
 <body>
-首页 用户登录
+<h5>欢迎进入ForwardWeb系统</h5>
 
-<form:form action="/User" method="post" modelAttribute="user">
-    <form:input path="name" htmlEscape="false" maxlength="64"/>
-    <form:input path="age" htmlEscape="false" maxlength="64"/>
+<form:form action="/login" method="post" modelAttribute="user">
+    用户名：<form:input path="account" htmlEscape="false" maxlength="64"/><br>
+    密码：<form:input path="password" htmlEscape="false" maxlength="64"/>
 
     <input id="btnSubmit" type="submit" value="保 存"/>
 </form:form>
 
 <br>
-<a href="/UserForm">新增用户</a>
+
 
 </body>
 </html>

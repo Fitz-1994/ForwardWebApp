@@ -13,12 +13,13 @@
 </head>
 <body>
 <form:form action="/UserAdd" method="post" modelAttribute="user">
-    <form:input path="name" htmlEscape="false" maxlength="64"/>
-    <form:input path="age" htmlEscape="false" maxlength="64"/>
-    <form:input path="account" htmlEscape="false" maxlength="64"/>
-    <form:input path="password" htmlEscape="false" maxlength="64"/>
-    <form:input path="phone" htmlEscape="false" maxlength="64"/>
-    <form:input path="email" htmlEscape="false" maxlength="64"/>
+
+    账号：<form:input path="account" htmlEscape="false" maxlength="64"/><br>
+    密码：<form:input path="password" htmlEscape="false" maxlength="64"/><br>
+    姓名：<form:input path="name" htmlEscape="false" maxlength="64"/><br>
+    年龄：<form:input path="age" htmlEscape="false" maxlength="64"/><br>
+    手机号：<form:input path="phone" htmlEscape="false" maxlength="64"/><br>
+    邮箱：<form:input path="email" htmlEscape="false" maxlength="64"/><br>
 
     <input id="btnSubmit" type="submit" value="保 存"/>
 </form:form>

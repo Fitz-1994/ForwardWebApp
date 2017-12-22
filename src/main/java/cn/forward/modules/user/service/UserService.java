@@ -1,6 +1,6 @@
 package cn.forward.modules.user.service;
 
-import cn.forward.common.System.UserIdGen;
+import cn.forward.common.System.SystemCommon;
 import cn.forward.modules.user.dao.UserDao;
 import cn.forward.modules.user.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,18 @@ public class UserService {
 
     public void addUser(User user){
 
-        user.setId(UserIdGen.getUUId());
+        user.setId(SystemCommon.getUUId());
+        //对密码进行加密
+        user.setPassword(SystemCommon.encryptPassword(user.getPassword()));
         userDao.addUser(user);
+    }
+
+    public boolean loginValidate(String account, String password){
+        String ciphertext = SystemCommon.encryptPassword(password);
+        User user = userDao.getUserByAccount(account);
+        if (user != null && ciphertext.equals(user.getPassword())){
+            return true;
+        }
+        return false;
     }
 }

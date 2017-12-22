@@ -19,4 +19,6 @@ public interface UserDao {
 
     void addUser(User user);
 
+    User getUserByAccount(String name);
+
 }

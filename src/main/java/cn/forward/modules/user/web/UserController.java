@@ -22,7 +22,7 @@ public class UserController {
     private UserDao userDao;
 
     /**
-     * 查询用户列表
+     * 用户列表界面
      * */
     @RequestMapping(value = "/User")
     public String list(User user, Model model) {
@@ -50,21 +50,48 @@ public class UserController {
         return "redirect:/User";
     }
 
+    /**
+     * 首页跳转
+     * */
     @RequestMapping(value = "/")
-    public String index(Model model) {
+    public String index(User user,String message ,Model model) {
+        if (user == null) {
+            user = new User();
+        }
 
-        User user = new User();
+        model.addAttribute("message",message);
         model.addAttribute("user", user);
         return "index";
     }
 
+    /**
+     * 用户登录
+     * */
     @RequestMapping(value = "/login")
     public String login(User user,Model model) {
         Boolean loginStatus = false;
+        String message = "";
         //如果账号密码都不为空，就做登录验证。
         if (StringUtils.isNotEmpty(user.getAccount()) && StringUtils.isNotEmpty(user.getPassword())) {
             loginStatus = userService.loginValidate(user.getAccount(),user.getPassword());
+        }else {
+            //账号密码为空时，返回登录界面，并提示账号密码为空
+            message = "账号或密码为空，请重新输入";
+            model.addAttribute("account",user.getAccount());
+            model.addAttribute("message",message);
+            /*redirectAttributes.addFlashAttribute("account",user.getAccount());
+            redirectAttributes.addFlashAttribute("message",message);*/
+            return "redirect:/";
         }
+        if (loginStatus){
+            message = "登录成功！";
+        }else {
+            //登录失败时，返回页面，
+            message = "账号或密码错误,请重新输入！";
+            model.addAttribute("message",message);
+            return "redirect:/";
+        }
+        model.addAttribute("message",message);
         model.addAttribute("loginStatus",loginStatus);
         return "user/loginIndex";
     }

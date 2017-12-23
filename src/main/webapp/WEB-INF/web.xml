@@ -10,6 +10,10 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
+    </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
@@ -44,5 +48,16 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+    <!-- log4j日志记录 -->
+
+    <!-- 加载Spring框架中的log4j监听器Log4jConfigListener -->
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
+    <!-- 为避免项目间冲突，定义唯一的 webAppRootKey -->
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>ForwardWebApp</param-value>
+    </context-param>
 
 </web-app>

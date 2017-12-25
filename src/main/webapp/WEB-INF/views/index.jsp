@@ -37,12 +37,22 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery -->
+    <script src="${ctxStatic}/sbadmin/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){//页面加载完之后，自动执行该方法
+            setTimeout(function(){$("#message").hide();},5000);//5秒后执行该方法
+        });
+    </script>
 </head>
 <body>
 <%--<h5>欢迎进入ForwardWeb系统</h5>--%>
-<div>
-        ${message}
-</div>
+<c:if test="${not empty message}">
+    <div id="message">
+            ${message}
+    </div>
+</c:if>
+
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -69,10 +79,10 @@
 </div>
 <br>
 <a href="${ctx}/UserForm">用户注册</a>
+<button id="hide" >隐藏message</button>
 
 </body>
-<!-- jQuery -->
-<script src="${ctxStatic}/sbadmin/vendor/jquery/jquery.min.js"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="${ctxStatic}/sbadmin/vendor/bootstrap/js/bootstrap.min.js"></script>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class UserController {
     private UserService userService;
     @Autowired
     private UserDao userDao;
+
 
     /**
      * 用户列表界面
@@ -54,13 +56,17 @@ public class UserController {
      * 首页跳转
      * */
     @RequestMapping(value = "/")
-    public String index(User user,String message ,Model model) {
+    public String index(User user, String message , Model model, HttpSession httpSession) {
+        if (httpSession.getAttribute( "userAccount")!=null){
+            model.addAttribute("loginStatus",true);
+            return "user/loginIndex";
+        }
         if (user == null) {
             user = new User();
         }
 
         model.addAttribute("message",message);
-        model.addAttribute("user", user);
+        model.addAttribute("user1", user);
         return "index";
     }
 
@@ -68,7 +74,7 @@ public class UserController {
      * 用户登录
      * */
     @RequestMapping(value = "/login")
-    public String login(User user,Model model) {
+    public String login(User user,Model model,HttpSession httpSession) {
         Boolean loginStatus = false;
         String message = "";
         //如果账号密码都不为空，就做登录验证。
@@ -85,6 +91,7 @@ public class UserController {
         }
         if (loginStatus){
             message = "登录成功！";
+            httpSession.setAttribute("userAccount",user.getAccount());
         }else {
             //登录失败时，返回页面，
             message = "账号或密码错误,请重新输入！";

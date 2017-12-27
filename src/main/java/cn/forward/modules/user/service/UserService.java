@@ -14,21 +14,24 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     UserDao userDao;
-
+    /**
+     * 日志对象
+     * */
     private static Logger logger = Logger.getLogger(UserService.class);
-    public User setName(User user,String name) {
-        user.setName(name);
-        return user;
-    }
 
+    /**
+     * 新增用户
+     * */
     public void addUser(User user){
-
         user.setId(SystemCommon.getUUId());
         //对密码进行加密
         user.setPassword(SystemCommon.encryptPassword(user.getPassword()));
         userDao.addUser(user);
     }
 
+    /**
+     * 登录验证方法
+     * */
     public boolean loginValidate(String account, String password){
         String ciphertext = SystemCommon.encryptPassword(password);
         User user = userDao.getUserByAccount(account);
@@ -38,6 +41,12 @@ public class UserService {
         }
         logger.info("登录失败");
         return false;
+    }
 
+    /**
+     * 通过账号获取用户
+     * */
+    public User getUserByAccount(String account){
+        return userDao.getUserByAccount(account);
     }
 }

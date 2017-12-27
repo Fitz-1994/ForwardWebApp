@@ -4,13 +4,11 @@ import cn.forward.common.System.SystemCommon;
 import cn.forward.modules.user.dao.UserDao;
 import cn.forward.modules.user.entity.User;
 import cn.forward.modules.user.service.UserService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -50,57 +48,8 @@ public class UserController {
     @RequestMapping(value = "${adminPath}/UserAdd")
     public String addUser(User user,Model model){
         userService.addUser(user);
-        return "redirect:/User";
+        return "redirect:"+SystemCommon.getProperties("forwardweb").getString("adminPath")+"/User";
     }
 
-    /**
-     * 首页跳转
-     * */
-    @RequestMapping(value = "${adminPath}")
-    public String index(User user, String message , Model model, HttpSession httpSession) {
-        if (httpSession.getAttribute( "userAccount")!=null){
-            model.addAttribute("loginStatus",true);
-            return "user/loginIndex";
-        }
-        if (user == null) {
-            user = new User();
-        }
 
-        model.addAttribute("message",message);
-        model.addAttribute("user", user);
-        return "index";
-    }
-
-    /**
-     * 用户登录
-     * */
-    @RequestMapping(value = "${adminPath}/login")
-    public String login(User user, Model model, HttpSession httpSession) {
-        Boolean loginStatus = false;
-        String message = "";
-        //如果账号密码都不为空，就做登录验证。
-        if (StringUtils.isNotEmpty(user.getAccount()) && StringUtils.isNotEmpty(user.getPassword())) {
-            loginStatus = userService.loginValidate(user.getAccount(),user.getPassword());
-        }else {
-            //账号密码为空时，返回登录界面，并提示账号密码为空
-            message = "账号或密码为空，请重新输入";
-            model.addAttribute("account",user.getAccount());
-            model.addAttribute("message",message);
-            /*redirectAttributes.addFlashAttribute("account",user.getAccount());
-            redirectAttributes.addFlashAttribute("message",message);*/
-            return "redirect:"+SystemCommon.getProperties("forwardweb").getString("adminPath");
-        }
-        if (loginStatus){
-            message = "登录成功！";
-            httpSession.setAttribute("userAccount",user.getAccount());
-        }else {
-            //登录失败时，返回页面，
-            message = "账号或密码错误,请重新输入！";
-            model.addAttribute("message",message);
-            return "redirect:"+SystemCommon.getProperties("forwardweb").getString("adminPath");
-        }
-        model.addAttribute("message",message);
-        model.addAttribute("loginStatus",loginStatus);
-        return "user/loginIndex";
-    }
 }

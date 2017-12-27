@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LoginInterceptor implements HandlerInterceptor  {
 
-    private final String ADMINSESSION = "userAccount";
+    private final String ADMINSESSION = "user";
     //拦截前处理
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {

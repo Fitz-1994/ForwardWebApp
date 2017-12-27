@@ -16,6 +16,26 @@
 <h1>
     <c:if test="${loginStatus eq true}">
         登录成功
+        <br>
+        <table>
+            <th>当前登录用户信息</th>
+        <tr>
+            <td>姓名：</td>
+            <td>${user.name}</td>
+        </tr>
+            <tr>
+                <td>年龄：</td>
+                <td>${user.age}</td>
+            </tr>
+            <tr>
+                <td>手机号：</td>
+                <td>${user.phone}</td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td>${user.email}</td>
+            </tr>
+        </table>
     </c:if>
     <c:if test="${loginStatus eq false}">
         登录失败

@@ -4,6 +4,8 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- 加载配置属性文件 -->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:forwardweb.properties" />
 
     <!-- 启用spring mvc 注解 -->
     <context:annotation-config />
@@ -27,4 +29,16 @@
     <!-- 对静态资源文件的访问  方案二 （二选一）-->
     <mvc:resources mapping="/static/**" location="/static/" cache-period="31556926"/>
 
+    <!-- 定义无Controller的path<->view直接映射 -->
+    <mvc:view-controller path="/" view-name="redirect:${adminPath}"/>
+
+    <!-- 登录拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/${adminPath}/*"/> <!-- 拦截路径 -->
+            <mvc:exclude-mapping path="/${adminPath}/"/>  <!-- 排除的拦截路径 -->
+            <mvc:exclude-mapping path="/${adminPath}/login"/>  <!-- 排除的拦截路径 -->
+            <bean class="cn.forward.common.Session.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

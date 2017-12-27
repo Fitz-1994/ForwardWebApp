@@ -61,7 +61,7 @@
                     <h3 class="panel-title" align="center">Forward Web</h3>
                 </div>
                 <div class="panel-body">
-                    <form:form action="${ctx}/login" method="post" modelAttribute="user1" role="form">
+                    <form:form action="${ctx}/login" method="post" modelAttribute="user" role="form">
                         <fieldset>
                             <div class="form-group">
                                 <form:input path="account" htmlEscape="false" maxlength="64" class="form-control" placeholder="账号"/>

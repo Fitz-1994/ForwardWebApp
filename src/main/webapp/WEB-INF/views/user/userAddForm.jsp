@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <%--
   Created by IntelliJ IDEA.
   User: Forward
@@ -12,7 +13,7 @@
     <title>新增用户</title>
 </head>
 <body>
-<form:form action="/UserAdd" method="post" modelAttribute="user">
+<form:form action="${ctx}/UserAdd" method="post" modelAttribute="user">
 
     账号：<form:input path="account" htmlEscape="false" maxlength="64"/><br>
     密码：<form:input path="password" htmlEscape="false" maxlength="64"/><br>

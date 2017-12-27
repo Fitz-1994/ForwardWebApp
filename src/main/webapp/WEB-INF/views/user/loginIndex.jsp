@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <%--
   Created by IntelliJ IDEA.
   User: Forward
@@ -21,7 +22,7 @@
     </c:if>
 </h1>
 <c:if test="${loginStatus eq true}">
-    <a href="/UserForm">新增用户</a>
+    <a href="${ctx}/UserForm">新增用户</a>
 </c:if>
 </body>
 </html>

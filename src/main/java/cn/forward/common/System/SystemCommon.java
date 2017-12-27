@@ -1,6 +1,7 @@
 package cn.forward.common.System;
 
 import java.security.MessageDigest;
+import java.util.ResourceBundle;
 import java.util.UUID;
 public class SystemCommon {
     public static String getUUId(){
@@ -32,5 +33,9 @@ public class SystemCommon {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public static ResourceBundle getProperties(String propertiesPath){
+        return ResourceBundle.getBundle(propertiesPath);
     }
 }

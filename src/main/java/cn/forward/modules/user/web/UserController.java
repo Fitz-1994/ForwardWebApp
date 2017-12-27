@@ -1,5 +1,6 @@
 package cn.forward.modules.user.web;
 
+import cn.forward.common.System.SystemCommon;
 import cn.forward.modules.user.dao.UserDao;
 import cn.forward.modules.user.entity.User;
 import cn.forward.modules.user.service.UserService;
@@ -26,7 +27,7 @@ public class UserController {
     /**
      * 用户列表界面
      * */
-    @RequestMapping(value = "/User")
+    @RequestMapping(value = "${adminPath}/User")
     public String list(User user, Model model) {
 
         List<User> userList = userDao.findAllUser();
@@ -38,7 +39,7 @@ public class UserController {
     /**
      * 新增用户信息页面
      * */
-    @RequestMapping(value = "/UserForm")
+    @RequestMapping(value = "${adminPath}/UserForm")
     public String form(User user,Model model){
 
         return "/user/userAddForm";
@@ -46,7 +47,7 @@ public class UserController {
     /**
      * 新增用户信息
      * */
-    @RequestMapping(value = "/UserAdd")
+    @RequestMapping(value = "${adminPath}/UserAdd")
     public String addUser(User user,Model model){
         userService.addUser(user);
         return "redirect:/User";
@@ -55,7 +56,7 @@ public class UserController {
     /**
      * 首页跳转
      * */
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "${adminPath}")
     public String index(User user, String message , Model model, HttpSession httpSession) {
         if (httpSession.getAttribute( "userAccount")!=null){
             model.addAttribute("loginStatus",true);
@@ -66,15 +67,15 @@ public class UserController {
         }
 
         model.addAttribute("message",message);
-        model.addAttribute("user1", user);
+        model.addAttribute("user", user);
         return "index";
     }
 
     /**
      * 用户登录
      * */
-    @RequestMapping(value = "/login")
-    public String login(User user,Model model,HttpSession httpSession) {
+    @RequestMapping(value = "${adminPath}/login")
+    public String login(User user, Model model, HttpSession httpSession) {
         Boolean loginStatus = false;
         String message = "";
         //如果账号密码都不为空，就做登录验证。
@@ -87,7 +88,7 @@ public class UserController {
             model.addAttribute("message",message);
             /*redirectAttributes.addFlashAttribute("account",user.getAccount());
             redirectAttributes.addFlashAttribute("message",message);*/
-            return "redirect:/";
+            return "redirect:"+SystemCommon.getProperties("forwardweb").getString("adminPath");
         }
         if (loginStatus){
             message = "登录成功！";
@@ -96,7 +97,7 @@ public class UserController {
             //登录失败时，返回页面，
             message = "账号或密码错误,请重新输入！";
             model.addAttribute("message",message);
-            return "redirect:/";
+            return "redirect:"+SystemCommon.getProperties("forwardweb").getString("adminPath");
         }
         model.addAttribute("message",message);
         model.addAttribute("loginStatus",loginStatus);

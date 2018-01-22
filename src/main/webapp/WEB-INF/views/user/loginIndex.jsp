@@ -43,6 +43,8 @@
 </h1>
 <c:if test="${loginStatus eq true}">
     <a href="${ctx}/UserForm">新增用户</a>
+    <br>
+    <a href="${ctx}/blog/addBlogForm">新增博客</a>
 </c:if>
 </body>
 </html>

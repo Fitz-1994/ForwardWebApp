@@ -13,8 +13,8 @@ public class test {
     }
 
     public static void main(String[] args) {
-        String str1 = "20180105";
-        String str2 = "20180104";
+        String str1 = "20170101";
+        String str2 = "20160104";
         System.out.println(str1.compareTo(str2));
 
         /*

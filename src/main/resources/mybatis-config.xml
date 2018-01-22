@@ -14,9 +14,13 @@
             </dataSource>
         </environment>
     </environments>-->
-    <typeAliases>
+    <!--<typeAliases>
         <typeAlias alias="User" type="cn.forward.modules.user.entity.User" />
-    </typeAliases>
+    </typeAliases>-->
+    <!--<typeAliases>
+        &lt;!&ndash; 批量定义别名，指定包名，此时pojo类的别名是pojo类的类名首字母大写或小写都行 &ndash;&gt;
+        <package name="cn.forward.modules.**.entity"/>
+    </typeAliases>-->
     <!--<mappers>
         &lt;!&ndash; 注册userMapper.xml文件，
         userMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/userMapper.xml&ndash;&gt;

@@ -25,6 +25,8 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--dataSource属性指定要用到的连接池-->
         <property name="dataSource" ref="dataSource" />
+        <!--批量定义别名-->
+        <property name="typeAliasesPackage" value="cn.forward.modules"/>
         <!--configLocation属性指定mybatis的核心配置文件-->
         <property name="configLocation" value="classpath:mybatis-config.xml" />
         <!-- 所有配置的mapper文件 -->
@@ -38,7 +40,7 @@
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-        <property name="basePackage" value="cn.forward.modules.user.dao" />
+        <property name="basePackage" value="cn.forward.modules.**.dao" />
     </bean>
     <bean id="taskExecutor"
           class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">

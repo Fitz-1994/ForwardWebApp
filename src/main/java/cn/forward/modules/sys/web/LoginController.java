@@ -1,6 +1,6 @@
 package cn.forward.modules.sys.web;
 
-import cn.forward.common.System.SystemCommon;
+import cn.forward.common.system.SystemCommon;
 import cn.forward.modules.user.entity.User;
 import cn.forward.modules.user.service.UserService;
 import org.apache.commons.lang3.StringUtils;

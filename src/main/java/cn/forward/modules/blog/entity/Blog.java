@@ -10,6 +10,13 @@ public class Blog extends BaseEntity{
     private String blogTitle;
     private String blogSubTitle;
     private String blogContent;
+    /**
+     * 博客类型
+     * 1、技术博客
+     * 2、音乐讨论
+     * 3、生活随笔
+     * */
+    private String blogType;
 
     public String getBlogTitle() {
         return blogTitle;
@@ -33,5 +40,13 @@ public class Blog extends BaseEntity{
 
     public void setBlogContent(String blogContent) {
         this.blogContent = blogContent;
+    }
+
+    public String getBlogType() {
+        return blogType;
+    }
+
+    public void setBlogType(String blogType) {
+        this.blogType = blogType;
     }
 }

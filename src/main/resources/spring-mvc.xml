@@ -35,9 +35,9 @@
     <!-- 登录拦截器 -->
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/${adminPath}/*"/> <!-- 拦截路径 -->
-            <mvc:exclude-mapping path="/${adminPath}/"/>  <!-- 排除的拦截路径 -->
-            <mvc:exclude-mapping path="/${adminPath}/login"/>  <!-- 排除的拦截路径 -->
+            <mvc:mapping path="${adminPath}/**"/> <!-- 拦截路径 -->
+            <mvc:exclude-mapping path="${adminPath}"/>  <!-- 排除的拦截路径 -->
+            <mvc:exclude-mapping path="${adminPath}/login"/>  <!-- 排除的拦截路径 -->
             <bean class="cn.forward.common.session.LoginInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>

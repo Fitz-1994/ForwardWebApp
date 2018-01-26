@@ -1,4 +1,4 @@
-<%@ page import="cn.forward.common.System.SystemCommon" %><%--
+<%@ page import="cn.forward.common.system.SystemCommon" %><%--
   Created by IntelliJ IDEA.
   User: Forward
   Date: 2017/12/23
@@ -13,6 +13,7 @@
 %>
 <%-- 用这种方式就可以获取到项目访问的上下文路径 --%>
 <c:set var="ctx" value = "${pageContext.request.contextPath}${res.getString('adminPath')}" />
+<c:set var="ctxFront" value = "${pageContext.request.contextPath}${res.getString('frontPath')}" />
 <c:set var="ctxStatic" value="${pageContext.request.contextPath}/static"/>
 <!-- jQuery -->
 <script src="${ctxStatic}/sbadmin/vendor/jquery/jquery.min.js"></script>

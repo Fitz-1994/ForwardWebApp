@@ -1,4 +1,4 @@
-package cn.forward.common.System;
+package cn.forward.common.system;
 
 import java.security.MessageDigest;
 import java.util.ResourceBundle;

@@ -1,5 +1,6 @@
 package cn.forward.common.session;
 
+import cn.forward.common.system.SystemCommon;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,7 +23,7 @@ public class LoginInterceptor implements HandlerInterceptor  {
         if(sessionObj!=null) {
             return true;
         }
-        response.sendRedirect(request.getContextPath()+"/admin");
+        response.sendRedirect(request.getContextPath()+ SystemCommon.getProperties("forwardweb").getString("adminPath")+"/login");
         return false;
     }
     /**

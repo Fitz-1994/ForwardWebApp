@@ -20,7 +20,7 @@
     <meta name="description" content="Flatfy Free Flat and Responsive HTML5 Template ">
     <meta name="author" content="">
 
-    <title>Forward Web</title>
+    <title>博客列表</title>
 
     <!-- Bootstrap core CSS -->
     <link href="${ctxStatic}/flatfytheme/css/bootstrap.min.css" rel="stylesheet">
@@ -54,30 +54,8 @@
     <div id="status"></div>
 </div>
 
-<!-- FullScreen -->
-<div class="intro-header">
-    <div class="col-xs-12 text-center abcen1">
-        <h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">Forward Web</h1>
-        <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">欢迎访问Forward个人博客</h3>
-        <ul class="list-inline intro-social-buttons">
-            <li><a href="https://weibo.com/u/2352289914" class="btn  btn-lg mybutton_standard wow fadeIn" data-wow-delay="0.8s"><i class="iconfont icon-weibo" style="font-size: large"></i>&nbsp;&nbsp;&nbsp;<span class="network-name">WeiBo</span></a>
-            </li>
-            <li><a href="https://github.com/ForwardDavis" class="btn  btn-lg mybutton_standard wow fadeIn" data-wow-delay="0.8s"><i class="iconfont icon-github" style="font-size: large"></i>&nbsp;&nbsp;&nbsp;<span class="network-name">Github</span></a>
-            </li>
-            <%--<li id="download" ><a href="#downloadlink" class="btn  btn-lg mybutton_standard wow swing wow fadeIn" data-wow-delay="1.2s"><span class="network-name">Free Download</span></a>
-            </li>--%>
-        </ul>
-    </div>
-    <!-- /.container -->
-    <div class="col-xs-12 text-center abcen wow fadeIn">
-        <div class="button_down ">
-            <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#useit"> <img class="img_scroll" src="${ctxStatic}/flatfytheme/img/icon/circle.png" alt=""> </a>
-        </div>
-    </div>
-</div>
-
 <!-- NavBar-->
-<nav class="navbar-default" role="navigation">
+<nav class="navbar-default" role="navigation" style="position: fixed;">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -108,105 +86,22 @@
     <div class="container">
 
         <div class="row">
-
-            <div class="col-sm-6 pull-right wow fadeInRightBig">
-                <img class="img-responsive " src="${ctxStatic}/flatfytheme/img/ipad.png" alt="">
-            </div>
-            <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
+            <div class="col-sm-12 wow fadeInLeftBig"  data-animation-delay="200">
                 <h3 class="section-heading">技术博客</h3>
                 <div class="sub-title lead3">我本人在学习工作当中所遇到的问题和总结的经验。</div>
                 <p class="lead">
-                <table>
-                    <c:forEach items="${techBlogList}" var="blog">
+                <table style="width: 100%;">
+                    <c:forEach begin="1" end="5" var="blog">
                       <tr>
-                          <td>${blog.blogTitle}</td>
-                          <td>${blog.gmtCreate}</td>
+                          <td colspan="2" class="lead2"><a href="${ctxFront}/blogDetail">这里展示博客文章标题</a></td>
+                          <td>2018-01-22</td>
                       </tr>
                     </c:forEach>
             </table>
-                </p>
-
-                <p><a class="btn btn-embossed btn-primary" href="${ctxFront}/blogList" role="button">更多</a></p>
             </div>
         </div>
     </div>
     <!-- /.container -->
-</div>
-
-<div id="" class="content-section-b">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 wow fadeInLeftBig">
-                <div id="owl-demo-1" class="owl-carousel">
-                    <a href="${ctxStatic}/flatfytheme/img/iphone.png" class="image-link">
-                        <div class="item">
-                            <img  class="img-responsive img-rounded" src="${ctxStatic}/flatfytheme/img/iphone.png" alt="">
-                        </div>
-                    </a>
-                    <a href="${ctxStatic}/flatfytheme/img/iphone.png" class="image-link">
-                        <div class="item">
-                            <img  class="img-responsive img-rounded" src="${ctxStatic}/flatfytheme/img/iphone.png" alt="">
-                        </div>
-                    </a>
-                    <a href="${ctxStatic}/flatfytheme/img/iphone.png" class="image-link">
-                        <div class="item">
-                            <img  class="img-responsive img-rounded" src="${ctxStatic}/flatfytheme/img/iphone.png" alt="">
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">
-                <h3 class="section-heading">个人爱好</h3>
-                <div class="sub-title lead3">篮球、音乐。</div>
-                <p class="lead">
-                    <table>
-                        <c:forEach items="${hobbyBlogList}" var="blog">
-                            <tr>
-                                <td>${blog.blogTitle}</td>
-                                <td>${blog.gmtCreate}</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </p>
-
-                <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>
-                    <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="content-section-a">
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-sm-6 pull-right wow fadeInRightBig">
-                <img class="img-responsive " src="${ctxStatic}/flatfytheme/img/doge.png" alt="">
-            </div>
-
-            <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
-                <h3 class="section-heading">生活随笔</h3>
-                <div class="sub-title lead3">生活当中的一些小事情。</div>
-                <p class="lead"><table>
-                <c:forEach items="${lifeBlogList}" var="blog">
-                    <tr>
-                        <td>${blog.blogTitle}</td>
-                        <td>${blog.gmtCreate}</td>
-                    </tr>
-                </c:forEach>
-            </table>
-                </p>
-
-                <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>
-                    <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
-            </div>
-        </div>
-    </div>
-
 </div>
 
 <!-- Contact -->

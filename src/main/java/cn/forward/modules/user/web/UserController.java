@@ -1,6 +1,6 @@
 package cn.forward.modules.user.web;
 
-import cn.forward.common.System.SystemCommon;
+import cn.forward.common.system.SystemCommon;
 import cn.forward.modules.user.dao.UserDao;
 import cn.forward.modules.user.entity.User;
 import cn.forward.modules.user.service.UserService;

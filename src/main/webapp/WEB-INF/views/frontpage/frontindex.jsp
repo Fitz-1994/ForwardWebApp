@@ -126,7 +126,7 @@
             </table>
                 </p>
 
-                <p><a class="btn btn-embossed btn-primary" href="${ctxFront}/blogList" role="button">更多</a></p>
+                <p><a class="btn btn-embossed btn-primary" href="${ctxFront}/blogList?blogType=1" role="button">更多</a></p>
             </div>
         </div>
     </div>

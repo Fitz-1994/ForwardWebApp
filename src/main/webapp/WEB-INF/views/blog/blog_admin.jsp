@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Forward
-  Date: 2017/12/19
-  Time: 14:47
+  User: forward
+  Date: 18-1-27
+  Time: 下午5:20
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -10,21 +10,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>用户信息</title>
+    <title>博客管理</title>
     <!-- Custom CSS -->
     <link href="${ctxStatic}/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
 <body>
-<div id="page-wrapper">
-name:
-${user.name}
-<br>
-age:
-${user.age}
-
-<c:forEach items="${userList}" var="user">
-    姓名：${user.name}
-</c:forEach>
+<div class="page-wrapper">
+    <a href="${ctx}/blog/addBlogForm" target="mainFrame">新增博客</a>
 </div>
 </body>
 </html>

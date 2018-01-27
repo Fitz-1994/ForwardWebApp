@@ -8,11 +8,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>新增用户</title>
+    <!-- Custom CSS -->
+    <link href="${ctxStatic}/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
 <body>
+<div class="page-wrapper">
 <form:form action="${ctx}/UserAdd" method="post" modelAttribute="user">
 
     账号：<form:input path="account" htmlEscape="false" maxlength="64"/><br>
@@ -24,6 +28,6 @@
 
     <input id="btnSubmit" type="submit" value="保 存"/>
 </form:form>
-
+</div>
 </body>
 </html>

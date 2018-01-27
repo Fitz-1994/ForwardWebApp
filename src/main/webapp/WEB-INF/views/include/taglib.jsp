@@ -17,3 +17,4 @@
 <c:set var="ctxStatic" value="${pageContext.request.contextPath}/static"/>
 <!-- jQuery -->
 <script src="${ctxStatic}/sbadmin/vendor/jquery/jquery.min.js"></script>
+<link href="${ctxStatic}/forwardweb/forwardweb.css" rel="stylesheet">

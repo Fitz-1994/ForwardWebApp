@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.forward.modules.blog.dao.BlogDao">
     <sql id="blogColumus">
+      a.id AS id,
       a.blog_title AS blogTitle,
       a.blog_subtitle AS blogSubTitle,
       a.blog_content AS blogContent,
@@ -10,6 +11,16 @@
       a.gmt_modified AS gmtModified,
       a.del_flag AS delFlag
     </sql>
+
+    <select id="getBlogById" resultType="Blog">
+        SELECT
+        <include refid="blogColumus"/>
+        FROM blog a
+        <where>
+            id = #{0}
+        </where>
+    </select>
+
     <select id="findBlogs" resultType="Blog">
         SELECT
         <include refid="blogColumus"/>

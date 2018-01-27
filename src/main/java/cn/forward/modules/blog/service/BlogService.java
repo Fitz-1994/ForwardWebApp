@@ -60,4 +60,11 @@ public class BlogService {
         }
         return null;
     }
+    /**
+     * 通过id获取博客
+     * @param id 博客的id
+     * */
+    public Blog getBlogById(String id){
+        return blogDao.getBlogById(id);
+    }
 }

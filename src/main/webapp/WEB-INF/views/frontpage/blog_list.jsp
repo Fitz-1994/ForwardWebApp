@@ -87,14 +87,14 @@
 
         <div class="row">
             <div class="col-sm-12 wow fadeInLeftBig"  data-animation-delay="200">
-                <h3 class="section-heading">技术博客</h3>
+                <h3 class="section-heading">第${blogType}类博客</h3>
                 <div class="sub-title lead3">我本人在学习工作当中所遇到的问题和总结的经验。</div>
                 <p class="lead">
                 <table style="width: 100%;">
-                    <c:forEach begin="1" end="5" var="blog">
+                    <c:forEach items="${blogList}" var="blog">
                       <tr>
-                          <td colspan="2" class="lead2"><a href="${ctxFront}/blogDetail">这里展示博客文章标题</a></td>
-                          <td>2018-01-22</td>
+                          <td colspan="2" class="lead2"><a href="${ctxFront}/blogDetail?id=${blog.id}">${blog.blogTitle}</a></td>
+                          <td>${blog.gmtCreate}</td>
                       </tr>
                     </c:forEach>
             </table>

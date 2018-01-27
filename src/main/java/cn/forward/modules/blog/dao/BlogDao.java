@@ -21,4 +21,10 @@ public interface BlogDao {
      * @return List<Blog> 博客记录的list
      * */
     List<Blog> findBlogs(Blog blog);
+
+    /**
+     * 通过id获取博客
+     * @param id 博客的id
+     * */
+    Blog getBlogById(String id);
 }

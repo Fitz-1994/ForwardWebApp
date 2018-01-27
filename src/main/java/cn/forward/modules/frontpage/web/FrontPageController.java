@@ -46,11 +46,17 @@ public class FrontPageController {
         return "frontpage/frontindex";
     }
     @RequestMapping(value = "blogList")
-    public String blogList(String blogType){
+    public String blogList(String blogType,Model model){//新增
+        //查询所有博客
+        List<Blog> blogList = blogService.findBlogs(blogType);
+        model.addAttribute("blogList",blogList);
+        model.addAttribute("blogType",blogType);
         return "frontpage/blog_list";
     }
     @RequestMapping(value = "blogDetail")
-    public String blogDetail(){
+    public String blogDetail(String id,Model model){
+        Blog blog = blogService.getBlogById(id);
+        model.addAttribute("blog",blog);
         return "frontpage/blog_detail";
     }
 }

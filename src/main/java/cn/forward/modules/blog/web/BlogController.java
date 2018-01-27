@@ -17,6 +17,11 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
+    @RequestMapping(value = {"","list"})
+    public String blogAdmin(){
+        return "blog/blog_admin";
+    }
+
     @RequestMapping(value = "addBlogForm")
     public String addBlogForm(Model model){
         model.addAttribute("blog",new Blog());

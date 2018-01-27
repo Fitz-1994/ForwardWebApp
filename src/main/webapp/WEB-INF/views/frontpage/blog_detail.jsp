@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>博客详情界面</title>
+    <title>${blog.blogTitle}</title>
 </head>
 <body>
-博客详情界面
+${blog.blogSubTitle}<br><br>
+${blog.blogContent}
 </body>
 </html>

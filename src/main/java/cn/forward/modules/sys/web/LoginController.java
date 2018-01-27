@@ -73,4 +73,9 @@ public class LoginController {
         model.addAttribute("loginStatus",loginStatus);
         return "user/loginIndex";
     }
+
+    @RequestMapping(value = "${adminPath}/test")
+    public String testIFrame(){
+        return "adminpage/page_body";
+    }
 }

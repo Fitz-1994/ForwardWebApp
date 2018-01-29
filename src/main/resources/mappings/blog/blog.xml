@@ -48,7 +48,7 @@
         #{blogTitle},
         #{blogSubTitle},
         #{blogContent},
-        #{blogType}
+        #{blogType},
         #{gmtCreate},
         #{gmtModified},
         #{delFlag}

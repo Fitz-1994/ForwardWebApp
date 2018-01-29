@@ -37,7 +37,16 @@
             <td>副标题：</td>
             <td><form:input path="blogSubTitle" htmlEscape="false" maxlength="64"/></td>
         </tr>
-        <form:input path="blogContent" htmlEscape="false" maxlength="64"/>
+        <tr>
+            <td>博客类型：</td>
+            <td><form:select path="blogType" class="input-medium">
+                <form:option value="" label="" />
+                <form:option value="1" label="技术博客" />
+                <form:option value="2" label="个人爱好" />
+                <form:option value="3" label="生活随笔" />
+            </form:select></td>
+        </tr>
+        <form:input path="blogContent" htmlEscape="false" maxlength="64" hidden="hidden" />
     </table>
 </form:form>
 <script id="container" name="content" type="text/plain" >

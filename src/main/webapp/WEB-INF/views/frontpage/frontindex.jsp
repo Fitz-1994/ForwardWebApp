@@ -71,7 +71,7 @@
     <!-- /.container -->
     <div class="col-xs-12 text-center abcen wow fadeIn">
         <div class="button_down ">
-            <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#useit"> <img class="img_scroll" src="${ctxStatic}/flatfytheme/img/icon/circle.png" alt=""> </a>
+            <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#tech"> <img class="img_scroll" src="${ctxStatic}/flatfytheme/img/icon/circle.png" alt=""> </a>
         </div>
     </div>
 </div>
@@ -86,15 +86,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#home">Forward Web</a>
+            <a class="navbar-brand" href="#tech">Forward Web</a>
         </div>
 
         <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li class="menuItem"><a href="#useit">技术博客</a></li>
-                <li class="menuItem"><a href="#screen">个人爱好</a></li>
-                <li class="menuItem"><a href="#credits">生活随笔</a></li>
-                <li class="menuItem"><a href="#contact">留言灌水</a></li>
+                <li class="menuItem"><a href="#tech">技术博客</a></li>
+                <li class="menuItem"><a href="#hobby">个人爱好</a></li>
+                <li class="menuItem"><a href="#life">生活随笔</a></li>
+                <li class="menuItem"><a href="#comment">留言灌水</a></li>
             </ul>
         </div>
 
@@ -102,8 +102,8 @@
 </nav>
 
 
-<!-- Use it -->
-<div id ="useit" class="content-section-a">
+<!-- 技术博客 -->
+<div id ="tech" class="content-section-a">
 
     <div class="container">
 
@@ -133,25 +133,25 @@
     <!-- /.container -->
 </div>
 
-<div id="" class="content-section-b">
-
+<%-- 个人爱好 --%>
+<div id="hobby" class="content-section-b">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 wow fadeInLeftBig">
                 <div id="owl-demo-1" class="owl-carousel">
-                    <a href="${ctxStatic}/flatfytheme/img/iphone.png" class="image-link">
+                    <a href="${ctxStatic}/images/kobe.jpg" class="image-link">
                         <div class="item">
-                            <img  class="img-responsive img-rounded" src="${ctxStatic}/flatfytheme/img/iphone.png" alt="">
+                            <img  class="img-rounded" src="${ctxStatic}/images/kobe.jpg" alt="科比">
                         </div>
                     </a>
-                    <a href="${ctxStatic}/flatfytheme/img/iphone.png" class="image-link">
+                    <a href="${ctxStatic}/images/mayday.jpg" class="image-link">
                         <div class="item">
-                            <img  class="img-responsive img-rounded" src="${ctxStatic}/flatfytheme/img/iphone.png" alt="">
+                            <img  class="img-rounded" src="${ctxStatic}/images/mayday.jpg" alt="五月天">
                         </div>
                     </a>
-                    <a href="${ctxStatic}/flatfytheme/img/iphone.png" class="image-link">
+                    <a href="${ctxStatic}/images/guitar.jpg" class="image-link">
                         <div class="item">
-                            <img  class="img-responsive img-rounded" src="${ctxStatic}/flatfytheme/img/iphone.png" alt="">
+                            <img  class="img-rounded" src="${ctxStatic}/images/guitar.jpg" alt="">
                         </div>
                     </a>
                 </div>
@@ -178,7 +178,8 @@
     </div>
 </div>
 
-<div class="content-section-a">
+<%-- 生活随笔 --%>
+<div id="life" class="content-section-a">
 
     <div class="container">
 
@@ -209,8 +210,8 @@
 
 </div>
 
-<!-- Contact -->
-<div id="contact" class="content-section-b">
+<!-- 留言灌水 -->
+<div id="comment" class="content-section-b">
     <div class="container">
         <div class="row">
 
@@ -252,19 +253,19 @@
             <hr class="featurette-divider hidden-lg">
             <div class="col-md-5 col-md-push-1 address">
                 <address>
-                    <h3>Office Location</h3>
-                    <p class="lead"><a href="">The Pentagon<br>
-                        Washington, DC 20301</a><br>
-                        Phone: XXX-XXX-XXXX<br>
-                        Fax: XXX-XXX-YYYY</p>
+                    <h3>To Forward</h3>
+                    <p class="lead">
+                        南昌大学前湖校区<br>
+                        Email: fw_forward@qq.com
+                    </p>
                 </address>
 
                 <h3>Social</h3>
                 <li class="social">
-                    <a href="#"><i class="fa fa-facebook-square fa-size"> </i></a>
-                    <a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a>
-                    <a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>
-                    <a href="#"><i class="fa fa-flickr fa-size"> </i> </a>
+                    <a href="https://weibo.com/u/2352289914"><i class="fa fa-weibo fa-size"> </i></a>
+                    <a href="https://www.facebook.com/forward.davis.3"><i class="fa fa-facebook-square fa-size"> </i></a>
+                    <a href="https://twitter.com/Mr_ForwardDavis"><i class="fa  fa-twitter-square fa-size"> </i> </a>
+                    <a href="https://www.instagram.com/forward_davis/"><i class="fa fa-instagram fa-size"> </i></a>
                 </li>
             </div>
         </div>

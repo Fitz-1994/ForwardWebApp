@@ -24,8 +24,8 @@
 
     </script>
 </head>
-<body>
-<div id="page-wrapper">
+<body class="frameBody">
+<div>
 <!-- 加载编辑器的容器 -->
 <form:form id="blogForm" action="${ctx}/blog/saveBlog" method="post" modelAttribute="blog" role="form">
     <table>

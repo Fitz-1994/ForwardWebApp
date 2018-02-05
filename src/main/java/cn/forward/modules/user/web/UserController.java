@@ -31,7 +31,7 @@ public class UserController {
         List<User> userList = userDao.findAllUser();
 
         model.addAttribute("userList", userList);
-        return "UserProfile";
+        return "/user/user_list";
     }
 
     /**

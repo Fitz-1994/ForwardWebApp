@@ -14,8 +14,8 @@
     <!-- Custom CSS -->
     <link href="${ctxStatic}/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
-<body>
-<div class="page-wrapper">
+<body class="frameBody">
+<div>
     <a href="${ctx}/blog/addBlogForm" target="mainFrame">新增博客</a>
 </div>
 </body>

@@ -14,8 +14,8 @@
     <!-- Custom CSS -->
     <link href="${ctxStatic}/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
 </head>
-<body>
-<div id="page-wrapper">
+<body class="frameBody">
+<div>
 name:
 ${user.name}
 <br>

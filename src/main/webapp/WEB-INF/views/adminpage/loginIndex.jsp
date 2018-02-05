@@ -43,6 +43,23 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style type="text/css">
+        @media (min-width: 768px) {
+            #mainFrame {
+                padding-left: 250px;
+            }
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // 初始化内容
+            var frameHeight = $("#mainFrame").height();
+            var bodyHeight = $("body").height();
+            var headHeight = $("nav").height();
+            $("#mainFrame").height(bodyHeight-headHeight-1);
+        });
+    </script>
 </head>
 
 <body>
@@ -87,7 +104,7 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="${ctx}/UserForm" target="mainFrame"><i class="fa fa-user fa-fw"></i>用户管理</a>
+                        <a href="${ctx}/User" target="mainFrame"><i class="fa fa-user fa-fw"></i>用户管理</a>
                     </li>
                     <li>
                         <a href="${ctx}/blog" target="mainFrame"><i class="fa fa-list fa-fw"></i>博客管理</a>
@@ -112,7 +129,7 @@
     </nav>
 
     <%-- 后期修改成iframe --%>
-    <iframe id="mainFrame" name="mainFrame" src="${ctx}/User" style="overflow:visible;" scrolling="yes" frameborder="no" width="100%" height="100%"></iframe>
+    <iframe id="mainFrame" name="mainFrame" src="${ctx}/welcome" style="overflow:visible;" scrolling="yes" frameborder="no" width="100%" <%--height="100%"--%>></iframe>
 </div>
 <!-- /#wrapper -->
 

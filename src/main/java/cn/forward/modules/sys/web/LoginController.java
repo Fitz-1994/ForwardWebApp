@@ -28,7 +28,7 @@ public class LoginController {
         String sessionName = "user";
         if (httpSession.getAttribute( sessionName)!=null){
             model.addAttribute("loginStatus",true);
-            return "user/loginIndex";
+            return "adminpage/loginIndex";
         }
         if (user == null) {
             user = new User();
@@ -36,7 +36,7 @@ public class LoginController {
 
         model.addAttribute("message",message);
         model.addAttribute("user", user);
-        return "index";
+        return "login";
     }
 
 
@@ -71,11 +71,11 @@ public class LoginController {
         }
         model.addAttribute("message",message);
         model.addAttribute("loginStatus",loginStatus);
-        return "user/loginIndex";
+        return "adminpage/loginIndex";
     }
 
-    @RequestMapping(value = "${adminPath}/test")
+    @RequestMapping(value = "${adminPath}/welcome")
     public String testIFrame(){
-        return "adminpage/page_body";
+        return "adminpage/welcome_page";
     }
 }
